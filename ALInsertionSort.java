@@ -12,15 +12,16 @@ public class ALInsertionSort
 		//Add the first number to the array list
 	sorted.add(myNumbers[0]);
 		//Loop once for all of the remaining numbers in the unsorted list
-		for(int i=1; i<myNumbers.length; i++){
-			System.out.println(sorted);
-			if(myNumbers[i-1] > myNumbers[i]){
-				sorted.add(i-1,myNumbers[i]);
-				inserted=true;
+		for(int i=myNumbers.length-1; i>0; i-- ){
+			int store=myNumbers[i];
+			for(int k=i-1; k>0; k--){
+				if(myNumbers[k]>myNumbers[k-1]){
+					int tempNum = myNumbers[k];
+					myNumbers[k]=myNumbers[k-1];
+					myNumbers[k-1]=tempNum;
+				}
 			}
-			if( !inserted){
-				sorted.add(myNumbers[i]);
-			}
+		}
 		}
 			//Check with each of the numbers in the sorted list
 
